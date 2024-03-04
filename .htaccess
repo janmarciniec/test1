@@ -1,0 +1,12 @@
+RewriteEngine On
+
+<ifModule mod_headers.c>
+
+<FilesMatch "\.js$">
+    ForceType application/javascript
+</FilesMatch>
+
+AddType application/javascript .js
+AddType text/css .css
+
+</ifModule>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Documentation - Mapplic</title>
+
+	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+	<div id="wrap">
+		<section class="inner" id="intro">
+			<a id="logo" href="#changelog"><img src="img/mapplic-logo.svg" title="Mapplic">8.0.2</a>
+			<h1>Documentation</h1>
+			<p>Mapplic is a custom map plugin that empowers users to create fully interactive maps from static vector (SVG) or image (PNG, JPG) files. With its impressive list of features including a filterable directory, CSV support and many more, it is a versatile tool that can help users achieve their mapping goals easier than ever. Featuring a real-time map builder, version 8 represents a complete overhaul of Mapplic using the latest technologies.</p>
+		</section>
+
+		<section class="inner" id="getting-started">
+			<h2>Getting started<a href="#getting-started">#</a></h2>
+
+			<p>The structure of the download package is as follows:</p>
+			<ul>
+				<li><i data-feather="folder"></i> <b>docs</b> - this documentation in HTML format</li>
+				<li><i data-feather="folder"></i> <b>mapplic</b> - main project library
+					<ul>
+						<li><i data-feather="folder"></i> <b>dist</b> - <u>main distribution</u></li>
+						<li><i data-feather="folder"></i> <b>public</b></li>
+						<li><i data-feather="folder"></i> <b>src</b></li>
+						<li><i data-feather="file"></i> <b>index.html</b></li>
+						<li><i data-feather="file"></i> <b>package.json</b></li>
+						
+					</ul>
+				</li>
+				<li><i data-feather="folder"></i> <b>mapplic-admin</b> - map builder project library
+					<ul>
+						<li><i data-feather="folder"></i> <b>dist</b> - <u>map builder distribution</u></li>
+						<li><i data-feather="folder"></i> <b>public</b></li>
+						<li><i data-feather="folder"></i> <b>src</b></li>
+						<li><i data-feather="file"></i> <b>index.html</b></li>
+						<li><i data-feather="file"></i> <b>package.json</b></li>
+					</ul>
+				</li>
+				<li><i data-feather="archive"></i> <b>mapplic7.1.2-legacy.zip</b> - old version of Mapplic</li>
+			</ul>
+			
+			<div id="dist">
+				<h3>The 'dist' folder <a href="#dist">#</a></h3>
+				<p>To render the mall demo map, you need to publish and access the <i data-feather="folder"></i> <b>mapplic/dist</b> folder using a web server, either live or local. This means that you cannot simply open the index.html file in a web browser directly from your computer. Instead, you will need to use a web server to serve the files, which will allow you to access them through a URL.</p>
+				
+				<p>This folder contains everything that is needed to publish a map for production.</p>
+				<ul>
+					<li><i data-feather="folder"></i> <b>assets</b> - map files, images, spreadsheets and any other assets used</li>
+					<li><i data-feather="file"></i> <b>data.json</b> - data file that contains all the settings and details of the map</li>
+					<li><i data-feather="file"></i> <b>index.html</b> - index file that loads a map</li>
+					<li><i data-feather="file"></i> <b>mapplic.css</b> - plugin stylesheet</li>
+					<li><i data-feather="file"></i> <b>mapplic.js</b> - plugin javascript library</li>
+				</ul>
+	
+				<p>In order to add a map to an existing project:</p>
+				<ol>
+					<li>Add <i>mapplic.js</i> and <i>mapplic.css</i> in the head section of your page:<br>
+						<code>
+							&lt;script type="module" src="./mapplic.js"&gt;&lt;/script&gt;<br>
+							&lt;link rel="stylesheet" href="./mapplic.css"&gt;
+						</code>
+					</li>
+					<li>Use the <i>&lt;mapplic-map&gt;</i> element anywhere in your page making sure that the <i>data-json</i> attribute is either a path to a map data.json file (relative to index.html) or a stringified JSON object.<br>
+						<code>
+							&lt;mapplic-map data-json="data.json"/&gt;
+						</code>
+					</li>
+				</ol>
+				<p>That's all! Your map should show up if you imported the two files (js and css) correctly.</p>
+				<p>If you're having issues, check the JavaScript console for any error message.</p>
+			</div>
+
+			<p class="note">Using older versions of the plugin is still safe and upgrading is not necessary as long as the plugin functions as expected. However, when starting a new project, we highly recommend using version 8 or higher</p>
+			<p class="warning">The use of a web server is necessary due to security reasons. Browsers implement a security feature called Cross-Origin Resource Sharing (CORS) policy which restricts web pages from making requests to a different domain than the one that served the web page.</p>
+		</section>
+
+		<section class="inner" id="map-builder">
+			<h2>Map builder<a href="#map-builder">#</a></h2>
+
+			<p>Version 8 introduces the new map builder, which greatly simplifies map editing and makes it more user-friendly.</p>
+
+			<p>The builder can be accessed from <i data-feather="folder"></i> <b>mapplic-admin/dist</b> folder served through a web server, either live or local.</p>
+
+			<ul>
+				<li><i data-feather="folder"></i> <b>assets</b> - map files, images, spreadsheets and any other assets</li>
+				<li><i data-feather="file"></i> <b>data.json</b> - data file of the Mall demo</li>
+				<li><i data-feather="file"></i> <b>data-lots.json</b> - data file of the Lots demo</li>
+				<li><i data-feather="file"></i> <b>data-us.json</b> - data file of the United States demo</li>
+				<li><i data-feather="file"></i> <b>data-world.json</b> - data file of the World demo</li>
+				<li><i data-feather="file"></i> <b>index.html</b> - index file of the builder</li>
+				<li><i data-feather="file"></i> <b>mapplic-admin.css</b> - builder + plugin stylesheet (bundled)</li>
+				<li><i data-feather="file"></i> <b>mapplic-admin.js</b> - builder + plugin javascript (bundled)</li>
+				<li><i data-feather="file"></i> <b>save.js</b> - a nodejs script for saving maps</li>
+			</ul>
+
+			<p>Through the left side panel, you can begin to modify the map, but it cannot be saved yet as saving files requires a backend script with the capability to modify and save files.</p>
+			<p>For map saving to work, you need to have Node.js installed. Nagivate to this folder using a terminal and run the following command:</p>
+			<code>node save.js</code>
+			<p>If <i>"Mapplic save script running."</i> shows up, you can save your modifications with the map builder.</p>
+
+			<p>In order to load a different demo map, add the <i>?map=[TARGET-DATA].json</i> parameter to your URL.<br>
+			For example, if you're running the admin on http://localhost/mapplic-admin-test/, modifying the url to <b>http://localhost/mapplic-admin-test/?map=data-us.json</b> should load the United States map.</p>
+			<p>You can duplicate and rename any of these <i>.json</i> files to start a new map.</p>
+
+			<p>The <b>Maps</b> popup can also be used to switch maps or generate data file for built-in geograhpic maps. The <i>save.js</i> script must be running in order to generate new jsons.</p>
+			<div class="image"><img src="img/maps.png" alt="Maps popup"></div>
+
+			<p class="warning">Anyone with access to the map builder can modify the map so it should only be used on local environments or password protected pages. Never publish the builder on a page with public access!</p>
+
+			<div id="layers">
+				<h3>Layers <a href="#layers">#</a></h3>
+				<p>The most basic building block of a map is the <b>layer</b>. At least one layer is required, but you can define multiple layers, which is useful for multi-level maps (like a building with multiple floors). </p>
+				
+				<p>Layer attributes</p>
+				<ul>
+					<li><b>ID</b> - required and must be unique</li>
+					<li><b>NAME</b> - display name of the layer</li>
+					<li><b>FILE</b> - required, path to the map file (svg, png or jpg)</li>
+					<li><b>STYLE</b> - optional style assigned to svg layers only</li>
+				</ul>
+
+				<div class="image"><img src="img/layers.png" alt="Layers panel"></div>
+
+				<p>You can select which layer to display by default.</p>
+				<p>The width and height (in pixels) of your map file must be defined manually. If the dimensions are not set, the map will not render. If the dimensions are incorrect, the locations will render on the wrong position.</p>
+				<p>Maps (in web mercator projection) can be geocalibrated by setting the map extent. Geocalibrating a map is an advanced task and requires GIS skills.</p>
+			</div>
+
+			<div id="locations">
+				<h3>Locations <a href="#locations">#</a></h3>
+
+				<p>Locations can be customized using a list of attributes.</p>
+				<ul>
+					<li><b>ID</b> - unique ID (required). Starts with a letter and no space or special characters allowed
+					<li><b>TITLE</b> - title of the location displayed in popups and directory</li>
+					<li><b>ABOUT</b> - short description of the location displayed in popups and directory</li>
+					<li><b>DESC</b> - HTML enabled description text displayed in popups</li>
+					<li><b>LAYER</b> - ID of the layer the location belongs to. If left blank and there is no matching vector feature available, the global markers layer will be used</li>
+					<li><b>COORD</b> - comma separeted <i>x</i> and <i>y</i> coordinate of location</li>
+					<li><b>ZOOM</b> - focus zoom level of location. If left blank, the global <i>Max zoom</i> will be used</li>
+					<li><b>TYPE</b> - type of the marker</li>
+					<li><b>COLOR</b> - hex color used for marker and popup styling</li>
+					<li><b>LABEL</b> - short text in the marker</li>
+					<li><b>ACTION</b> - action to perform when a location is focused</li>
+					<li><b>LINK</b> - URL used for redirects or popup buttons</li>
+					<li><b>STYLE</b> - predefined style used for complex marker and popup styling. Overwrites standard <i>COLOR</i> attribute</li>
+					<li><b>IMAGE</b> - image displayed in popups</li>
+					<li><b>THUMB</b> - thumbnail displayed in directory or as marker if "thumbnail" <i>type</i> is used</li>
+					<li><b>GROUP</b> - group(s) the location belongs to</li>
+					<li><b>SAMPLE</b> - location to use as sample</li>
+					<li><b>HIDE</b> - hide location from directory</li>
+					<li><b>DISABLE</b> - disable location</li>
+				</ul>
+
+				<div class="image"><img src="img/location.png" alt="Location panel"></div>
+
+				<p id="sample">Locations can inherit attributes from another location set as <i>SAMPLE</i>. It is possible to set a global sample from which all locations inherit attributes.</p>
+				<p id="csv">Locations can be imported from and exported as CSV. Export your locations to see the correct structure of a Mapplic compatible CSV file.</p>
+			</div>
+
+			<div id="settings">
+				<h3>Settings <a href="#settings">#</a></h3>
+				<p>You can fine tune your map with a list of settings available on the Settings panel. Changes are applied immediately.</p>
+				<ul>
+					<li>Sidebar
+						<ul>
+							<li>Alphabetic order</li>
+							<li>Search and filters</li>
+							<li>Right aligned</li>
+							<li>Thumbnails</li>
+							<li>Toggle enabled</li>
+							<li>Closed by default</li>
+							<li>Sidebar width - pixel or percent values accepted, example: <i>25%</i> or <i>300px</i></li>
+						</ul>
+					</li>
+					<li>Zoom and pan
+						<ul>
+							<li>Reset button</li>
+							<li>Zoom buttons</li>
+							<li>Max zoom</li>
+						</ul>
+					</li>
+					<li>Layer switcher - applicable if there are more than one layers</li>
+					<li>Fullscreen</li>
+					<li>Hover tooltip</li>
+					<li>Deeplinking</li>
+					<li>More button text</li>
+					<li>Container height - auto height by default</li>
+					<li>Portrait breakpoint - 600 by default</li>
+					<li>Portrait height</li>
+					<li>Portrait min height</li>
+				</ul>
+			</div>
+
+			<div id="filters">
+				<h3>Filters <a href="#filters">#</a></h3>
+				<p>Locations can be grouped and the groups can be used for filtering. Multiple groups can be assigned to a location.</p>
+			</div>
+
+			<div id="appearance">
+				<h3>Appearance <a href="#appearance">#</a></h3>
+
+				<p>You can define reusable location styles which are added as CSS classes to a marker or an svg element. Styles can control the <i>background and stroke colors</i> of <i>base, hover and active states</i> as well as <i>stroke width</i> and <i>text color</i>.</p>
+				<p>If a style is assigned to a location, it will overwrite its <i>color</i> attribute.</p>
+				<p>The map's primary color can be customized to match your website's design.</p>
+				<p>Use the <i>Custom CSS</i> field for advanced styling.</p>
+
+				<div class="image"><img src="img/appearance.png" alt="Appearance panel"></div>
+			</div>
+		</section>
+
+		<section class="inner" id="svg">
+			<h2>SVG map<a href="#svg">#</a></h2>
+			<p>You can make certain parts of an SVG file interactive, such as a region of a geographic map or a room of a building. This feature is only available when using SVG as base map (PNG and JPG based maps can only have location markers).</p>
+			<p>Groups that begin with the name <b>MLOC-</b> are detected by Mapplic, and their named child elements are considered interactive elements.</p>
+			<ul>
+				<li>MLOC-units
+					<ul>
+						<li>u01</li>
+						<li>u02</li>
+						<li>u03</li>
+					</ul>
+				</li>
+			</ul>
+			<p>Using the above structure, there will be 3 interactive elements and you can link a location to any of those elements by setting the location ID to <i>u01, u02 or u03</i>. Please ensure that location IDs always start with a letter and not a number or a special character.</p>
+
+			<p class="note">Keeping your SVG map files clean and lightweight is crucial to ensure optimal performance. Overly large files can negatively impact the performance of the map.</p>
+		</section>
+
+		<section class="inner" id="credits">
+			<h2>Credits<a href="#credits">#</a></h2>
+			<p>Version 8 of Mapplic was completely rebuilt using React, the most widely used JavaScript library. It is packaged in a way that makes it compatible with any website.</p>
+			<ul>
+				<li><b>React</b> - JavaScript library</li>
+				<li>Vite - build tool</li>
+				<li>Framer Motion - animations</li>
+				<li>Papa Parse - CSV parsing</li>
+				<li>Feather - icon set</li>
+				<li>and many other awesome tools</li>
+			</ul>
+		</section>
+
+		<section class="inner" id="changelog">
+			<h2>Changelog<a href="#changelog">#</a></h2>
+
+			<div>
+				<h3><a href="#8.0.2" class="v">8.0.2</a> - March 21, 2023</h3>
+				<ul>
+					<li>minor bug fixes</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3><a href="#8.0.0" class="v">8.0.0</a> - March 18, 2023</h3>
+				<ul>
+					<li>rewrite in React</li>
+				</ul>
+			</div>
+		</section>
+
+		<footer>
+			<div class="inner">
+				<p>© 2023 sekler</p>
+			</div>
+		</footer>
+		<script>feather.replace()</script>
+	</div>
+</body>
+</html>

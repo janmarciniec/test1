@@ -1,0 +1,37 @@
+{
+  "name": "vite-project",
+  "homepage": "http://gala2.projektyibif.pl",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "@react-hook/resize-observer": "^1.2.6",
+    "@tiptap/extension-link": "^2.1.8",
+    "@tiptap/extension-placeholder": "^2.1.8",
+    "@tiptap/react": "^2.1.8",
+    "@tiptap/starter-kit": "^2.1.8",
+    "@vitejs/plugin-react": "^4.0.4",
+    "ace-builds": "^1.24.1",
+    "classnames": "^2.3.2",
+    "framer-motion": "^10.16.4",
+    "js-beautify": "^1.14.9",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-ace": "^10.1.0",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
+    "react-inlinesvg": "^4.0.3",
+    "react-responsive-modal": "^6.4.2",
+    "react-sortablejs": "^6.1.4",
+    "sortablejs": "^1.15.0"
+  }
+}

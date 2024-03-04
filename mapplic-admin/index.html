@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<title>mapplic-admin</title>
+		<style>
+			#root {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				height: 100vh;
+			}
+
+			#content {
+				overflow: auto;
+				flex-grow: 1;
+				display: flex;
+			}
+
+			#header {
+				padding: 20px 24px;
+			}
+
+			.logo {
+				height: 24px;
+				padding: 2px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<div id="header">
+				<img class="logo" src="assets/mapplic-logo.svg" alt="Mapplic">
+			</div>
+			<div id="content"></div>
+		</div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>
